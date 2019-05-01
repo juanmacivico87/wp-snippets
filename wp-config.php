@@ -18,8 +18,8 @@ switch( WORKING_IN )
     case 'local':
         //Activar la notificación de errores de PHP
         //Enable PHP error notice
-        error_reporting( 0 );
-        ini_set( 'display_errors', 0 );
+        error_reporting( -1 );
+        ini_set( 'display_errors', 1 );
         //Define las credenciales de la base de datos
         //Define database credentials
         $db_name     = 'your_local_database';
@@ -90,14 +90,14 @@ define( 'DB_COLLATE', 'utf8mb4_general_ci' );
 
 //Cambiar las claves de acceso únicas. La URL para crearlas es: https://api.wordpress.org/secret-key/1.1/salt/
 //Change de access keys. The URL to create it is: https://api.wordpress.org/secret-key/1.1/salt/
-define( 'AUTH_KEY', 'C(9GyZbC)z?|s;$4|l&%r)rKpTIky,Q05{==-_7!o Q)#N%&[,++uGQ*c-CNCHQr' ); // Cambia esto por tu frase aleatoria.
-define( 'SECURE_AUTH_KEY', '4~r~Cz$bTci@)>^ylxa/B0;jXo4Jr]3+C{~n+bUTw<.^Y_}@pV[S_u<B[4E+TQ3U' ); // Cambia esto por tu frase aleatoria.
-define( 'LOGGED_IN_KEY', 'C{VqL`&_Y1G,$b~K*sI4c3!6s4(/?!&Y-4tIy{NZ=]R&B![Z9_oB](Qe^-^oX9|C' ); // Cambia esto por tu frase aleatoria.
-define( 'NONCE_KEY', 'uP]6bY#C;gA25RS UzY8FP~Va^ygBtuzZ]I;!d7-j7|$Khu+T?9KfL%f*mNo|QT*' ); // Cambia esto por tu frase aleatoria.
-define( 'AUTH_SALT', '|P,idMLr|C0Ih2pmjl0cq 7vN%8sB7j0zCg2c~1K)iAW&#|C2azlF>{A?66fu-cT' ); // Cambia esto por tu frase aleatoria.
-define( 'SECURE_AUTH_SALT', 'vivvDy.vRl+a5z$lGM3#^<silI{Dy>$ob#mCg^P-g^bOpo4&a.g7%HW-ocg)i,^w' ); // Cambia esto por tu frase aleatoria.
-define( 'LOGGED_IN_SALT', 'Q6|EV>@fv= 7zz!Zg3/{tkd@Xh-HR4NHD(Gt$<?V#Ha-^`c3;{3R<#+Po]![9Lzk' ); // Cambia esto por tu frase aleatoria.
-define( 'NONCE_SALT', '|8KR.-np2O::-h*HTDZfI;IYlwqN:V|w#c`O?{}6msSP3e8Be@3fL.$0}^:T5Kcl' ); // Cambia esto por tu frase aleatoria.
+define( 'AUTH_KEY', 'C(9GyZbC)z?|s;$4|l&%r)rKpTIky,Q05{==-_7!o Q)#N%&[,++uGQ*c-CNCHQr' );
+define( 'SECURE_AUTH_KEY', '4~r~Cz$bTci@)>^ylxa/B0;jXo4Jr]3+C{~n+bUTw<.^Y_}@pV[S_u<B[4E+TQ3U' );
+define( 'LOGGED_IN_KEY', 'C{VqL`&_Y1G,$b~K*sI4c3!6s4(/?!&Y-4tIy{NZ=]R&B![Z9_oB](Qe^-^oX9|C' );
+define( 'NONCE_KEY', 'uP]6bY#C;gA25RS UzY8FP~Va^ygBtuzZ]I;!d7-j7|$Khu+T?9KfL%f*mNo|QT*' );
+define( 'AUTH_SALT', '|P,idMLr|C0Ih2pmjl0cq 7vN%8sB7j0zCg2c~1K)iAW&#|C2azlF>{A?66fu-cT' );
+define( 'SECURE_AUTH_SALT', 'vivvDy.vRl+a5z$lGM3#^<silI{Dy>$ob#mCg^P-g^bOpo4&a.g7%HW-ocg)i,^w' );
+define( 'LOGGED_IN_SALT', 'Q6|EV>@fv= 7zz!Zg3/{tkd@Xh-HR4NHD(Gt$<?V#Ha-^`c3;{3R<#+Po]![9Lzk' );
+define( 'NONCE_SALT', '|8KR.-np2O::-h*HTDZfI;IYlwqN:V|w#c`O?{}6msSP3e8Be@3fL.$0}^:T5Kcl' );
 
 //Define el prefijo de la base de datos
 //Define database prefix
