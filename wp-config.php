@@ -36,10 +36,10 @@ switch( WORKING_IN )
         $wp_child_theme = 'http://localhost/your-project-folder/wp-content/themes/your-child-theme';
         //Activa la depuración
         //Enable debug options
-        define('WP_DEBUG', true);
-        define('WP_DEBUG_DISPLAY', true);
-        define('WP_DEBUG_LOG', true);
-        define('SCRIPT_DEBUG', true);
+        define( 'WP_DEBUG', true );
+        define( 'WP_DEBUG_DISPLAY', true );
+        define( 'WP_DEBUG_LOG', true );
+        define( 'SCRIPT_DEBUG', true );
         break;
     case 'website':
         //Desactivar la notificación de errores de PHP
@@ -62,17 +62,17 @@ switch( WORKING_IN )
         $wp_child_theme = 'https://www.yourwebsite.com/wp-content/themes/your-child-theme';
         //Desactiva la depuración
         //Disabled debug options
-        define('WP_DEBUG', false);
-        define('WP_DEBUG_DISPLAY', false);
-        define('WP_DEBUG_LOG', false);
-        define('SCRIPT_DEBUG', false);
+        define( 'WP_DEBUG', false );
+        define( 'WP_DEBUG_DISPLAY', false );
+        define( 'WP_DEBUG_LOG', false );
+        define( 'SCRIPT_DEBUG', false );
         //Forzar SSL en el Login
         //Force SSL Login
         define( 'FORCE_SSL_LOGIN', true );
         define( 'FORCE_SSL_ADMIN', true );
         //Evita la instalación de plugins y temas
         //Avoid plugins and themes install
-        define('DISALLOW_FILE_MODS', true);
+        define( 'DISALLOW_FILE_MODS', true );
         //Activar la caché de WP
         //Enable WP caché
         define( 'ENABLE_CACHE', true );
@@ -136,18 +136,19 @@ define( 'DISABLE_WP_CRON', true );
 
 //Define el límite de memoria.
 //Define memory limit.
-define('WP_MEMORY_LIMIT', '128M');
-define('WP_MAX_MEMORY_LIMIT', '256M');
+define( 'WP_MEMORY_LIMIT', '128M' );
+define( 'WP_MAX_MEMORY_LIMIT', '256M' );
 
 //Borrar versiones de imágenes al eliminar la original
 //Delete images versions when remove the original
-define('IMAGE_EDIT_OVERWRITE', true);
+define( 'IMAGE_EDIT_OVERWRITE', true );
 
-//Define la concatenación de elementos
-//Define elements concat
-define('CONCATENATE_SCRIPTS', false);
-define('COMPRESS_CSS', false);
-define('COMPRESS_SCRIPTS', false);
+//Define la concatenación y compresión de elementos
+//Define elements concat and compress
+define( 'CONCATENATE_SCRIPTS', false );
+define( 'COMPRESS_CSS', false );
+define( 'COMPRESS_SCRIPTS', false );
+define( 'ENFORCE_GZIP', true );
 
 //Permite que la web sea multisitio (borrar estas líneas si no es un multisitio).
 //Allow that the web is multisite (remove this lines if website isn't multisite).
