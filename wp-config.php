@@ -30,16 +30,22 @@ switch( WORKING_IN )
         //Define website URL
         $wp_home = 'http://localhost/your-project-folder';
         $wp_site = 'http://localhost/your-project-folder';
-        //Define la URL del tema
-        //Define theme URL
-        $wp_theme       = 'http://localhost/your-project-folder/wp-content/themes/your-theme';
-        $wp_child_theme = 'http://localhost/your-project-folder/wp-content/themes/your-child-theme';
         //Activa la depuración
         //Enable debug options
         define( 'WP_DEBUG', true );
         define( 'WP_DEBUG_DISPLAY', true );
         define( 'WP_DEBUG_LOG', true );
         define( 'SCRIPT_DEBUG', true );
+        //Desactivar la caché de WP
+        //Disable WP caché
+        define( 'WP_CACHE', false );
+        define( 'DISABLE_CACHE', true );
+        //Define la concatenación y compresión de elementos
+        //Define elements concat and compress
+        define( 'CONCATENATE_SCRIPTS', false );
+        define( 'COMPRESS_CSS', false );
+        define( 'COMPRESS_SCRIPTS', false );
+        define( 'ENFORCE_GZIP', false );
         break;
     case 'website':
         //Desactivar la notificación de errores de PHP
@@ -56,10 +62,6 @@ switch( WORKING_IN )
         //Define website URL
         $wp_home = 'https://www.yourwebsite.com';
         $wp_site = 'https://www.yourwebsite.com';
-        //Define la URL del tema
-        //Define theme URL
-        $wp_theme       = 'https://www.yourwebsite.com/wp-content/themes/your-theme';
-        $wp_child_theme = 'https://www.yourwebsite.com/wp-content/themes/your-child-theme';
         //Desactiva la depuración
         //Disabled debug options
         define( 'WP_DEBUG', false );
@@ -75,7 +77,14 @@ switch( WORKING_IN )
         define( 'DISALLOW_FILE_MODS', true );
         //Activar la caché de WP
         //Enable WP caché
+        define( 'WP_CACHE', true );
         define( 'ENABLE_CACHE', true );
+        //Define la concatenación y compresión de elementos
+        //Define elements concat and compress
+        define( 'CONCATENATE_SCRIPTS', true );
+        define( 'COMPRESS_CSS', true );
+        define( 'COMPRESS_SCRIPTS', true );
+        define( 'ENFORCE_GZIP', true );
         break;
 }
 
@@ -125,11 +134,6 @@ define( 'EMPTY_TRASH_DAYS', 7 );
 define( 'WP_HOME', $wp_home );
 define( 'WP_SITEURL', $wp_site );
 
-//Define la URL del tema
-//Define theme URL
-define( 'TEMPLATEPATH', $wp_theme );
-define( 'STYLESHEETPATH', $wp_child_theme );
-
 //Desactiva el cron de WP
 //Disabled WP cron
 define( 'DISABLE_WP_CRON', true );
@@ -143,13 +147,6 @@ define( 'WP_MAX_MEMORY_LIMIT', '256M' );
 //Delete images versions when remove the original
 define( 'IMAGE_EDIT_OVERWRITE', true );
 
-//Define la concatenación y compresión de elementos
-//Define elements concat and compress
-define( 'CONCATENATE_SCRIPTS', false );
-define( 'COMPRESS_CSS', false );
-define( 'COMPRESS_SCRIPTS', false );
-define( 'ENFORCE_GZIP', true );
-
 //Permite que la web sea multisitio (borrar estas líneas si no es un multisitio).
 //Allow that the web is multisite (remove this lines if website isn't multisite).
 define( 'WP_ALLOW_MULTISITE', true );
@@ -162,7 +159,3 @@ define( 'WPCF7_AUTOP', false );
 //Repair database errors (enable only for repair).
 //yourdomain.com/wp-admin/maint/repair.php
 define( 'WP_ALLOW_REPAIR', false );
-
-//Bloquear el acceso al archivo XMLRPC.PHP para evitar ataques
-//Lock access to file XMLRPC.PHP to avoid attacks.
-add_filter( 'xmlrpc_enabled', '__return_false' );
