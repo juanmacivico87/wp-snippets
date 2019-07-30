@@ -2,7 +2,7 @@
 if ( !defined( 'ABSPATH' ) )
     exit;
 
-class JMC87_Config
+class JMC87_PluginConfig
 {
     public function __construct()
     {
@@ -11,7 +11,6 @@ class JMC87_Config
 
     public function jmc87_load_textdomain()
     {
-        $url_lang = basename( dirname( __FILE__ ) ) . '/languages/';
-        load_plugin_textdomain( PLG_TEXTDOMAIN, false, $url_lang );
+        load_plugin_textdomain( PLG_TEXTDOMAIN, false, LANG_DIR );
     }
 }

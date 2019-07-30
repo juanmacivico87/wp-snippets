@@ -31,6 +31,9 @@ if ( !defined( 'ABSPATH' ) )
 if ( !defined( 'PLG_TEXTDOMAIN' ) )
     define( 'PLG_TEXTDOMAIN', 'jmc87_plugin_textdomain' );
 
+if ( !defined( 'LANG_DIR' ) )
+    define( 'LANG_DIR', basename( dirname( __FILE__ ) ) . '/languages' );
+
 function jmc87_plugin_install()
 {
     if ( !current_user_can( 'activate_plugins' ) )
@@ -53,9 +56,9 @@ function jmc87_plugin_uninstall()
 register_uninstall_hook( __FILE__, 'jmc87_plugin_uninstall' );
 
 require 'config/config.php';
-$config = new JMC87_Config();
+$config = new JMC87_PluginConfig();
 
-require 'src/customizer.php';
+require 'src/customizerSection/customizer.php';
 $customizer = new JMC87_Customizer();
 
 require 'src/customPostsTypes/custom-post-type.php';

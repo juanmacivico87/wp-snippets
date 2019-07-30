@@ -10,8 +10,6 @@
 class JMC87_CustomTaxonomy
 {
     public $taxonomy   = 'custom_cat';
-    public $singular   = 'Custom Category';
-    public $plural     = 'Custom Categories';
     public $post_type  = 'sample';
 
     public $rest_base  = 'custom_cat';
@@ -31,26 +29,26 @@ class JMC87_CustomTaxonomy
     public function jmc87_add_custom_taxonomy()
     {
         $args = array(
-            'label'  => __( $this->plural, PLG_TEXTDOMAIN ),
+            'label'  => __( 'Custom Categories', PLG_TEXTDOMAIN ),
             'labels' => array(
-                'name'                       => __( $this->plural, PLG_TEXTDOMAIN ),
-                'singular_name'              => __( $this->singular, PLG_TEXTDOMAIN ),
-                'menu_name'                  => __( $this->plural, PLG_TEXTDOMAIN ),
-                'all_items'                  => __( 'All ' . $this->plural, PLG_TEXTDOMAIN ),
-                'edit_item'                  => __( 'Edit ' . $this->singular, PLG_TEXTDOMAIN ),
-                'view_item'                  => __( 'View ' . $this->singular, PLG_TEXTDOMAIN ),
-                'update_item'                => __( 'Update ' . $this->singular, PLG_TEXTDOMAIN ),
-                'add_new_item'               => __( 'Add new ' . $this->singular, PLG_TEXTDOMAIN ),
-                'new_item_name'              => __( 'New ' . $this->singular . ' Name', PLG_TEXTDOMAIN ),
-                'parent_item'                => __( 'Parent ' . $this->singular, PLG_TEXTDOMAIN ),
-                'parent_item_colon'          => __( 'Parent ' . $this->singular . ':', PLG_TEXTDOMAIN ),
-                'search_items'               => __( 'Search ' . $this->plural, PLG_TEXTDOMAIN ),
-                'popular_items'              => __( 'Popular ' . $this->plural, PLG_TEXTDOMAIN ),
-                'separate_items_with_commas' => __( 'Separate ' . $this->plural . ' with Commas', PLG_TEXTDOMAIN ),
-                'add_or_remove_items'        => __( 'Add or remove ' . $this->plural, PLG_TEXTDOMAIN ),
-                'choose_from_most_used'      => __( 'Choose from most used ' . $this->plural, PLG_TEXTDOMAIN ),
-                'not_found'                  => __( $this->plural . ' not Found', PLG_TEXTDOMAIN ),
-                'back_to_items'              => __( 'Back to ' . $this->plural, PLG_TEXTDOMAIN ),
+                'name'                       => __( 'Custom Categories', PLG_TEXTDOMAIN ),
+                'singular_name'              => __( 'Custom Category', PLG_TEXTDOMAIN ),
+                'menu_name'                  => __( 'Custom Categories', PLG_TEXTDOMAIN ),
+                'all_items'                  => __( 'All Custom Categories', PLG_TEXTDOMAIN ),
+                'edit_item'                  => __( 'Edit Custom Category', PLG_TEXTDOMAIN ),
+                'view_item'                  => __( 'View Custom Category', PLG_TEXTDOMAIN ),
+                'update_item'                => __( 'Update Custom Category', PLG_TEXTDOMAIN ),
+                'add_new_item'               => __( 'Add new Custom Category', PLG_TEXTDOMAIN ),
+                'new_item_name'              => __( 'New Custom Category Name', PLG_TEXTDOMAIN ),
+                'parent_item'                => __( 'Parent Custom Category', PLG_TEXTDOMAIN ),
+                'parent_item_colon'          => __( 'Parent Custom Category:', PLG_TEXTDOMAIN ),
+                'search_items'               => __( 'Search Custom Categories', PLG_TEXTDOMAIN ),
+                'popular_items'              => __( 'Popular Custom Categories', PLG_TEXTDOMAIN ),
+                'separate_items_with_commas' => __( 'Separate Custom Categories with Commas', PLG_TEXTDOMAIN ),
+                'add_or_remove_items'        => __( 'Add or remove Custom Categories', PLG_TEXTDOMAIN ),
+                'choose_from_most_used'      => __( 'Choose from most used Custom Categories', PLG_TEXTDOMAIN ),
+                'not_found'                  => __( 'Custom Categories not Found', PLG_TEXTDOMAIN ),
+                'back_to_items'              => __( 'Back to Custom Categories', PLG_TEXTDOMAIN ),
             ),
             'public' => true,
             'publicly_queryable' => true,
