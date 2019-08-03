@@ -66,3 +66,6 @@ $custom_post_type = new JMC87_CustomPostType();
 
 require 'src/customTaxonomies/custom-taxonomy.php';
 $custom_taxonomy = new JMC87_CustomTaxonomy();
+
+require 'src/customMetaboxes/custom-metabox.php';
+$custom_taxonomy = new JMC87_CustomMetabox();
