@@ -1,12 +1,21 @@
 <?php
 /**
- * Copia el contenido de este archivo entre la cabecera del paquete (package) y el mensaje de 'Feliz blogging'
- * Copy this file content between package header and 'happy blogging' message
- * 
- * Para más información sobre el archivo wp-config.php visita:
- * For more info about wp-config.php visit:
- * 
- * https://codex.wordpress.org/Editing_wp-config.php
+ * The base configuration for WordPress
+ *
+ * The wp-config.php creation script uses this file during the
+ * installation. You don't have to use the web site, you can
+ * copy this file to "wp-config.php" and fill in the values.
+ *
+ * This file contains the following configurations:
+ *
+ * * MySQL settings
+ * * Secret keys
+ * * Database table prefix
+ * * ABSPATH
+ *
+ * @link https://codex.wordpress.org/Editing_wp-config.php
+ *
+ * @package WordPress
  */
 
 //Define el entorno de trabajo
@@ -159,3 +168,13 @@ define( 'WPCF7_AUTOP', false );
 //Repair database errors (enable only for repair).
 //yourdomain.com/wp-admin/maint/repair.php
 define( 'WP_ALLOW_REPAIR', false );
+
+/* That's all, stop editing! Happy publishing. */
+
+/** Absolute path to the WordPress directory. */
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+}
+
+/** Sets up WordPress vars and included files. */
+require_once( ABSPATH . 'wp-settings.php' );
