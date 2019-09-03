@@ -1,13 +1,13 @@
 <?php
 /**
- * A snippet to create a new custom taxonomy for a post type in WordPress. For more info, view:
+ * A snippet to create a new custom category taxonomy for a post type in WordPress. For more info, view:
  *
  * @link https://codex.wordpress.org/Function_Reference/register_taxonomy
  *
- * @package jmc87_custom_taxonomy
+ * @package jmc87_custom_category
  */
 
-class JMC87_CustomTaxonomy
+class JMC87_CustomCategory
 {
     public $taxonomy   = 'custom_cat';
     public $post_type  = 'sample';
@@ -17,16 +17,16 @@ class JMC87_CustomTaxonomy
     public $rewrite    = array( 
         'slug'          => 'custom-cat',
         'with_front'    => false,
-        'hierarchical'  => false,
+        'hierarchical'  => true,
         'ep_mask'       => EP_NONE,
     );
 
     public function __construct()
     {
-        add_action( 'init', array( $this, 'jmc87_add_custom_taxonomy' ) );
+        add_action( 'init', array( $this, 'jmc87_add_custom_category' ) );
     }
 
-    public function jmc87_add_custom_taxonomy()
+    public function jmc87_add_custom_category()
     {
         $args = array(
             'label'  => __( 'Custom Categories', PLG_TEXTDOMAIN ),
@@ -43,10 +43,6 @@ class JMC87_CustomTaxonomy
                 'parent_item'                => __( 'Parent Custom Category', PLG_TEXTDOMAIN ),
                 'parent_item_colon'          => __( 'Parent Custom Category:', PLG_TEXTDOMAIN ),
                 'search_items'               => __( 'Search Custom Categories', PLG_TEXTDOMAIN ),
-                'popular_items'              => __( 'Popular Custom Categories', PLG_TEXTDOMAIN ),
-                'separate_items_with_commas' => __( 'Separate Custom Categories with Commas', PLG_TEXTDOMAIN ),
-                'add_or_remove_items'        => __( 'Add or remove Custom Categories', PLG_TEXTDOMAIN ),
-                'choose_from_most_used'      => __( 'Choose from most used Custom Categories', PLG_TEXTDOMAIN ),
                 'not_found'                  => __( 'Custom Categories not Found', PLG_TEXTDOMAIN ),
                 'back_to_items'              => __( 'Back to Custom Categories', PLG_TEXTDOMAIN ),
             ),
@@ -57,10 +53,9 @@ class JMC87_CustomTaxonomy
             'show_in_nav_menus' => true,
             'show_in_rest' => true,
             'rest_base' => $this->rest_base,
-            'show_tagcloud' => true,
             'show_in_quick_edit' => true,
             'show_admin_column' => false,
-            'description' => '',
+            'description' => __( 'Custom Category Description', PLG_TEXTDOMAIN ),
             'hierarchical' => true,
             'query_var' => $this->query_var,
             'rewrite' => $this->rewrite
