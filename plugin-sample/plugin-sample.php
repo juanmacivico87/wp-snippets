@@ -68,4 +68,7 @@ require 'src/customTaxonomies/custom-taxonomy.php';
 $custom_taxonomy = new JMC87_CustomTaxonomy();
 
 require 'src/customMetaboxes/custom-metabox.php';
-$custom_taxonomy = new JMC87_CustomMetabox();
+$custom_metabox = new JMC87_CustomMetabox();
+
+require 'src/customBlocks/custom-acf-block.php';
+$custom_acf_block = new JMC87_CustomACFGutenbergBlock();
