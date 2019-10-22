@@ -2,7 +2,7 @@
 /**
  * A snippet to create a new Gutenberg block. For more info, view:
  *
- * @link https://www.advancedcustomfields.com/blog/acf-5-8-introducing-acf-blocks-for-gutenberg/
+ * @link https://www.advancedcustomfields.com/resources/acf_register_block_type/
  *
  * @package jmc87_cgb
  */
@@ -17,16 +17,30 @@ class JMC87_CustomACFGutenbergBlock
     
     public function jmc87_add_custom_block()
     {
-        if ( function_exists( 'acf_register_block' ) ) {
-            acf_register_block(
+        if ( function_exists( 'acf_register_block_type' ) ) {
+            acf_register_block_type(
                 array(
                     'name'				=> 'sample',
                     'title'				=> __( 'Sample Block', PLG_TEXTDOMAIN ),
                     'description'		=> __( 'A Gutenbetg sample block', PLG_TEXTDOMAIN ),
-                    'render_callback'	=> array( $this, 'jmc87_render_custom_block' ),
                     'category'			=> 'formatting',
                     'icon'				=> 'admin-comments',
                     'keywords'			=> array( 'sample', 'block' ),
+                    'post_types'        => array( 'post', 'page', 'sample' ),
+                    'mode'              => 'edit',
+                    'render_template'   => PLUGIN_DIR . 'src/customBlocks/customACFBlock/views/template-acf-block.php',
+                    'enqueue_assets'    => function() {
+                        if ( !is_admin() )
+                        {
+                            wp_enqueue_style( 'sample-block-css', PLUGIN_DIR . 'src/customBlocks/customACFBlock/acf-block.css' );
+                            wp_enqueue_script( 'sample-block-js', PLUGIN_DIR . 'src/customBlocks/customACFBlock/acf-block.js', array(), '', true );
+                            $args = array(
+                                'ajax_url' => admin_url( 'admin-ajax.php' ),
+                            );
+                            wp_localize_script( 'sample-block-js', 'ajax_var', $args );
+                        }
+                    },
+                    'supports'          => array( 'mode' => false ),
                 )
             );
         }
@@ -114,20 +128,5 @@ class JMC87_CustomACFGutenbergBlock
                 )
             );
         endif;
-    }
-
-    public function jmc87_render_custom_block( $block )
-    {
-        $title    = get_field( 'sample_title' );
-        $subtitle = get_field( 'sample_subtitle' );
-        $button   = get_field( 'sample_button' ); ?>
-        
-        <section class="sample-block">
-            <h1><?php echo $title ?></h1>
-            <p><?php echo $subtitle ?></p>
-            <?php if ( $button ) : ?>
-                <a href="<?php echo $button['url'] ?>" target="<?php echo $button['target'] ?>" title="<?php echo $button['title'] ?>"><?php echo $button['title'] ?></a>
-            <?php endif ?>
-        </section><?php
     }
 }

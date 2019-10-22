@@ -34,6 +34,9 @@ if ( !defined( 'PLG_TEXTDOMAIN' ) )
 if ( !defined( 'LANG_DIR' ) )
     define( 'LANG_DIR', basename( dirname( __FILE__ ) ) . '/languages' );
 
+if ( !defined( 'PLUGIN_DIR' ) )
+    define( 'PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+
 function jmc87_plugin_install()
 {
     if ( !current_user_can( 'activate_plugins' ) )
@@ -73,5 +76,5 @@ $custom_tag = new JMC87_CustomTag();
 require 'src/customMetaboxes/custom-metabox.php';
 $custom_metabox = new JMC87_CustomMetabox();
 
-require 'src/customBlocks/custom-acf-block.php';
+require 'src/customBlocks/customACFBlock/custom-acf-block.php';
 $custom_acf_block = new JMC87_CustomACFGutenbergBlock();
