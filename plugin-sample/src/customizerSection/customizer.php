@@ -27,16 +27,16 @@ class JMC87_Customizer
             array(
                 'priority'       => 1,
                 'capability'     => 'edit_pages',
-                'title'          => __( 'Panel Name', jmc87_plugin_textdomain ),
+                'title'          => __( 'Panel Name', 'jmc87_plugin_textdomain' ),
             )
         );
 
         $wp_customize -> add_section( 
             $this->section,
             array(
-                'title'         => __( 'Section Name', jmc87_plugin_textdomain ),
+                'title'         => __( 'Section Name', 'jmc87_plugin_textdomain' ),
                 'priority'      => 1,
-                'description'   => __( 'A little section description', jmc87_plugin_textdomain ),
+                'description'   => __( 'A little section description', 'jmc87_plugin_textdomain' ),
                 'capability'    => 'edit_pages',
                 'panel'         => $this->panel,
             )
@@ -55,8 +55,8 @@ class JMC87_Customizer
         $wp_customize -> add_control(
             $this->control,
             array(
-                'label'       => __( 'Control Name', jmc87_plugin_textdomain ),
-                'description' => __( 'A little control description', jmc87_plugin_textdomain ),
+                'label'       => __( 'Control Name', 'jmc87_plugin_textdomain' ),
+                'description' => __( 'A little control description', 'jmc87_plugin_textdomain' ),
                 'section'     => $this->section,
                 'priority'    => 1,
                 'type'        => 'text',

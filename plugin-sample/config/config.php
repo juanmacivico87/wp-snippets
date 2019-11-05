@@ -11,6 +11,6 @@ class JMC87_PluginConfig
 
     public function jmc87_load_textdomain()
     {
-        load_plugin_textdomain( jmc87_plugin_textdomain, false, LANG_DIR );
+        load_plugin_textdomain( 'jmc87_plugin_textdomain', false, LANG_DIR );
     }
 }
