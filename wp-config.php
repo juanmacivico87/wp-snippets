@@ -45,6 +45,10 @@ switch( WORKING_IN )
         define( 'WP_DEBUG_DISPLAY', true );
         define( 'WP_DEBUG_LOG', true );
         define( 'SCRIPT_DEBUG', true );
+        define( 'WP_DISABLE_FATAL_ERROR_HANDLER', true );
+        define( 'IMPORT_DEBUG', true );
+        //Desactiva los mensajes de aviso de los plugins
+        define( 'DISABLE_NAG_NOTICES', false );
         //Desactivar la caché de WP
         //Disable WP caché
         define( 'WP_CACHE', false );
@@ -77,6 +81,10 @@ switch( WORKING_IN )
         define( 'WP_DEBUG_DISPLAY', false );
         define( 'WP_DEBUG_LOG', false );
         define( 'SCRIPT_DEBUG', false );
+        define( 'WP_DISABLE_FATAL_ERROR_HANDLER', false );
+        define( 'IMPORT_DEBUG', false );
+        //Desactiva los mensajes de aviso de los plugins
+        define( 'DISABLE_NAG_NOTICES', true );
         //Forzar SSL en el Login
         //Force SSL Login
         define( 'FORCE_SSL_LOGIN', true );
