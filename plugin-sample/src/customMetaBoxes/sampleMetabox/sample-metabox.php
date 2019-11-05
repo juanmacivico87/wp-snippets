@@ -7,7 +7,7 @@
  * @package jmc87_metabox
  */
 
-class JMC87_CustomMetabox
+class JMC87_SampleMetabox
 {
     public $screen      = 'sample';
     public $metabox_id  = 'sample_metabox';

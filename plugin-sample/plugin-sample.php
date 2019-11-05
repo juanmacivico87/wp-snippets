@@ -73,8 +73,8 @@ $custom_category = new JMC87_CustomCategory();
 require 'src/customTaxonomies/customTag/custom-tag.php';
 $custom_tag = new JMC87_CustomTag();
 
-require 'src/customMetaboxes/custom-metabox.php';
-$custom_metabox = new JMC87_CustomMetabox();
+require 'src/customMetaboxes/sampleMetabox/sample-metabox.php';
+$custom_metabox = new JMC87_SampleMetabox();
 
 require 'src/customBlocks/customACFBlock/custom-acf-block.php';
 $custom_acf_block = new JMC87_CustomACFGutenbergBlock();
