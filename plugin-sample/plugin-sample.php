@@ -28,9 +28,6 @@ along with [Plugin Name]. If not, see https://www.gnu.org/licenses/gpl-2.0.html
 if ( !defined( 'ABSPATH' ) )
     exit;
 
-if ( !defined( 'PLG_TEXTDOMAIN' ) )
-    define( 'PLG_TEXTDOMAIN', 'jmc87_plugin_textdomain' );
-
 if ( !defined( 'LANG_DIR' ) )
     define( 'LANG_DIR', basename( dirname( __FILE__ ) ) . '/languages' );
 
@@ -40,21 +37,21 @@ if ( !defined( 'PLUGIN_DIR' ) )
 function jmc87_plugin_install()
 {
     if ( !current_user_can( 'activate_plugins' ) )
-        wp_die( __( 'Don\'t have enough permissions to install this plugin.', PLG_TEXTDOMAIN ) . '<br /><a href="' . admin_url( 'plugins.php' ) . '">&laquo; ' . __( 'Back to plugins page.', PLG_TEXTDOMAIN ) . '</a>' );
+        wp_die( __( 'Don\'t have enough permissions to install this plugin.', jmc87_plugin_textdomain ) . '<br /><a href="' . admin_url( 'plugins.php' ) . '">&laquo; ' . __( 'Back to plugins page.', jmc87_plugin_textdomain ) . '</a>' );
 }
 register_activation_hook( __FILE__, 'jmc87_plugin_install' );
 
 function jmc87_plugin_deactivation()
 {
     if ( !current_user_can( 'activate_plugins' ) )
-        wp_die( __( 'Don\'t have enough permissions to disable this plugin.', PLG_TEXTDOMAIN ) . '<br /><a href="' . admin_url( 'plugins.php' ) . '">&laquo; ' . __( 'Back to plugins page.', PLG_TEXTDOMAIN ) . '</a>' );
+        wp_die( __( 'Don\'t have enough permissions to disable this plugin.', jmc87_plugin_textdomain ) . '<br /><a href="' . admin_url( 'plugins.php' ) . '">&laquo; ' . __( 'Back to plugins page.', jmc87_plugin_textdomain ) . '</a>' );
 }
 register_deactivation_hook( __FILE__, 'jmc87_plugin_deactivation' );
 
 function jmc87_plugin_uninstall()
 {
     if ( !current_user_can( 'activate_plugins' ) )
-        wp_die( __( 'Don\'t have enough permissions to uninstall this plugin.', PLG_TEXTDOMAIN ) . '<br /><a href="' . admin_url( 'plugins.php' ) . '">&laquo; ' . __( 'Back to plugins page.', PLG_TEXTDOMAIN ) . '</a>' );
+        wp_die( __( 'Don\'t have enough permissions to uninstall this plugin.', jmc87_plugin_textdomain ) . '<br /><a href="' . admin_url( 'plugins.php' ) . '">&laquo; ' . __( 'Back to plugins page.', jmc87_plugin_textdomain ) . '</a>' );
 }
 register_uninstall_hook( __FILE__, 'jmc87_plugin_uninstall' );
 
