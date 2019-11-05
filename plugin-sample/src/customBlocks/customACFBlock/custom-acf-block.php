@@ -4,7 +4,7 @@
  *
  * @link https://www.advancedcustomfields.com/resources/acf_register_block_type/
  *
- * @package jmc87_cgb
+ * @package jmc87_plugin
  */
 
 class JMC87_CustomACFGutenbergBlock

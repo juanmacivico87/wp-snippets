@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Theme_Customization_API
  *
- * @package jmc87_customizer
+ * @package jmc87_plugin
  */
 
 class JMC87_Customizer

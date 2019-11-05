@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Function_Reference/register_taxonomy
  *
- * @package jmc87_custom_category
+ * @package jmc87_plugin
  */
 
 class JMC87_CustomCategory

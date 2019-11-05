@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Function_Reference/register_post_type
  *
- * @package jmc87_cpt
+ * @package jmc87_plugin
  */
 
 class JMC87_SamplePostType

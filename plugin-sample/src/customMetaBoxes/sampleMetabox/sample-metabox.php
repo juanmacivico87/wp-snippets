@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/plugins/metadata/custom-meta-boxes/
  *
- * @package jmc87_metabox
+ * @package jmc87_plugin
  */
 
 class JMC87_SampleMetabox
