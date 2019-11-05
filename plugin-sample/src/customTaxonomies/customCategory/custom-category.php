@@ -24,6 +24,7 @@ class JMC87_CustomCategory
     public function __construct()
     {
         add_action( 'init', array( $this, 'jmc87_add_custom_category' ) );
+        add_filter( 'taxonomy_template', array( $this, 'jmc87_get_custom_category_template' ) );
     }
 
     public function jmc87_add_custom_category()
@@ -62,5 +63,13 @@ class JMC87_CustomCategory
         );
 
         register_taxonomy( $this->taxonomy, $this->post_type, $args );
+    }
+
+    public function jmc87_get_custom_category_template( $template )
+    {
+        if ( get_query_var( 'taxonomy' ) === $this->taxonomy )
+            $template = PLUGIN_DIR . 'src/customTaxonomies/customCategory/views/taxonomy-category.php';
+
+        return $template;
     }
 }

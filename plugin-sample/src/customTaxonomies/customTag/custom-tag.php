@@ -24,6 +24,7 @@ class JMC87_CustomTag
     public function __construct()
     {
         add_action( 'init', array( $this, 'jmc87_add_custom_tag' ) );
+        add_filter( 'taxonomy_template', array( $this, 'jmc87_get_custom_tag_template' ) );
     }
 
     public function jmc87_add_custom_tag()
@@ -65,5 +66,13 @@ class JMC87_CustomTag
         );
 
         register_taxonomy( $this->taxonomy, $this->post_type, $args );
+    }
+
+    public function jmc87_get_custom_tag_template( $template )
+    {
+        if ( get_query_var( 'taxonomy' ) === $this->taxonomy )
+            $template = PLUGIN_DIR . 'src/customTaxonomies/customTag/views/taxonomy-tag.php';
+
+        return $template;
     }
 }
