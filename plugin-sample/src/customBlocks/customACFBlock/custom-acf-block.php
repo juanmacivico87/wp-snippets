@@ -32,8 +32,8 @@ class JMC87_CustomACFGutenbergBlock
                     'enqueue_assets'    => function() {
                         if ( !is_admin() )
                         {
-                            wp_enqueue_style( 'sample-block-css', PLUGIN_DIR . 'src/customBlocks/customACFBlock/acf-block.css' );
-                            wp_enqueue_script( 'sample-block-js', PLUGIN_DIR . 'src/customBlocks/customACFBlock/acf-block.js', array(), '', true );
+                            wp_enqueue_style( 'sample-block-css', PLUGIN_URL . 'src/customBlocks/customACFBlock/acf-block.css' );
+                            wp_enqueue_script( 'sample-block-js', PLUGIN_URL . 'src/customBlocks/customACFBlock/acf-block.js', array(), '', true );
                             $args = array(
                                 'ajax_url' => admin_url( 'admin-ajax.php' ),
                             );
