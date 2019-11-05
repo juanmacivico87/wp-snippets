@@ -23,7 +23,8 @@ class JMC87_SamplePostType
     public function __construct()
     {
         add_action( 'init', array( $this, 'jmc87_add_custom_post_type' ) );
-        add_filter( 'archive_template', array( $this, 'jmc87_get_post_type_archive_template' ) );
+        add_filter( 'archive_template', array( $this, 'jmc87_get_post_type_templates' ) );
+        add_filter( 'single_template', array( $this, 'jmc87_get_post_type_templates' ) );
     }
 
     public function jmc87_add_custom_post_type()
@@ -73,7 +74,7 @@ class JMC87_SamplePostType
             'hierarchical'        => true,
             'supports'            => $this->support,
             'taxonomies'          => $this->taxonomies,
-            'has_archive'         => false,
+            'has_archive'         => true,
             'rewrite'             => $this->rewrite,
             'query_var'           => true,
             'can_export'          => true,
@@ -85,10 +86,20 @@ class JMC87_SamplePostType
         flush_rewrite_rules();
     }
 
-    public function jmc87_get_post_type_archive_template( $template )
+    public function jmc87_get_post_type_templates( $template )
     {
-        if ( get_post_type() === $this->post_type && is_archive() )
-             $template = PLUGIN_DIR . 'src/customPostsTypes/samplePostType/views/archive-sample.php';
+        if ( get_post_type() === $this->post_type )
+        { 
+            switch( true ) 
+            {
+                case is_archive() && !is_tax():
+                    $template = PLUGIN_DIR . 'src/customPostsTypes/samplePostType/views/archive-sample.php';
+                    break;
+                case is_single():
+                    $template = PLUGIN_DIR . 'src/customPostsTypes/samplePostType/views/single-sample.php';
+                    break;
+            }
+        }
 
         return $template;
     }
