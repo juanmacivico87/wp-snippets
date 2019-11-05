@@ -67,10 +67,10 @@ $customizer = new JMC87_Customizer();
 require 'src/customPostsTypes/samplePostType/sample-post-type.php';
 $custom_post_type = new JMC87_SamplePostType();
 
-require 'src/customTaxonomies/custom-category.php';
+require 'src/customTaxonomies/customCategory/custom-category.php';
 $custom_category = new JMC87_CustomCategory();
 
-require 'src/customTaxonomies/custom-tag.php';
+require 'src/customTaxonomies/customTag/custom-tag.php';
 $custom_tag = new JMC87_CustomTag();
 
 require 'src/customMetaboxes/custom-metabox.php';
