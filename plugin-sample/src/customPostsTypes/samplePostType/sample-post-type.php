@@ -23,6 +23,7 @@ class JMC87_SamplePostType
     public function __construct()
     {
         add_action( 'init', array( $this, 'jmc87_add_custom_post_type' ) );
+        add_filter( 'archive_template', array( $this, 'jmc87_get_post_type_archive_template' ) );
     }
 
     public function jmc87_add_custom_post_type()
@@ -82,5 +83,13 @@ class JMC87_SamplePostType
 
         register_post_type( $this->post_type, $args );
         flush_rewrite_rules();
+    }
+
+    public function jmc87_get_post_type_archive_template( $template )
+    {
+        if ( get_post_type() === $this->post_type && is_archive() )
+             $template = PLUGIN_DIR . 'src/customPostsTypes/samplePostType/views/archive-sample.php';
+
+        return $template;
     }
 }
