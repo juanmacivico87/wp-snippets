@@ -7,7 +7,7 @@
  * @package jmc87_cpt
  */
 
-class JMC87_CustomPostType
+class JMC87_SamplePostType
 {
     public $post_type  = 'sample';
 

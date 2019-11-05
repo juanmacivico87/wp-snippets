@@ -64,8 +64,8 @@ $config = new JMC87_PluginConfig();
 require 'src/customizerSection/customizer.php';
 $customizer = new JMC87_Customizer();
 
-require 'src/customPostsTypes/custom-post-type.php';
-$custom_post_type = new JMC87_CustomPostType();
+require 'src/customPostsTypes/samplePostType/sample-post-type.php';
+$custom_post_type = new JMC87_SamplePostType();
 
 require 'src/customTaxonomies/custom-category.php';
 $custom_category = new JMC87_CustomCategory();
