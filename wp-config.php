@@ -20,11 +20,11 @@
 
 //Define el entorno de trabajo
 //Define work environment
-define( 'WORKING_IN', 'local' );
+define( 'WP_ENVIRONMENT_TYPE', 'local' );
 
-switch( WORKING_IN )
+switch( WP_ENVIRONMENT_TYPE )
 {
-    case 'local':
+    case 'development':
         //Activar la notificación de errores de PHP
         //Enable PHP error notice
         error_reporting( -1 );
@@ -60,7 +60,7 @@ switch( WORKING_IN )
         define( 'COMPRESS_SCRIPTS', false );
         define( 'ENFORCE_GZIP', false );
         break;
-    case 'website':
+    case 'production':
         //Desactivar la notificación de errores de PHP
         //Disable PHP error notice
         error_reporting( 0 );
